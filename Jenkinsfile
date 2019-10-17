@@ -2,11 +2,7 @@ pipeline {
     agent {label 'ios'}
      stages {
         stage('PR Check') {
-          when {
-              expression {
-                  env.CHANGE_ID
-              }              
-          }
+          
           steps{
             sh """
               pod install --repo-update
