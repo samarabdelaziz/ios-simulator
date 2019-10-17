@@ -2,7 +2,7 @@ pipeline {
     agent {label 'ios'}
      stages {
         stage('build and archive') {
-          steps{
+            steps{
             sh """
               
               #/Applications/Xcode9.4.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3
@@ -18,7 +18,7 @@ pipeline {
           }
 
         stage('Export IPA') {
-          steps{
+            steps{
             sh """
               
               #/Applications/Xcode9.4.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3
@@ -35,7 +35,7 @@ pipeline {
         }
 
         stage('Install app on simulator') {
-          steps{
+            steps{
             sh """
               
               #/Applications/Xcode9.4.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3
