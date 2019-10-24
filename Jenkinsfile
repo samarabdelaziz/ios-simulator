@@ -21,7 +21,7 @@ pipeline {
               
 
               xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/Samaripa.xcarchive -exportPath  /Users/jenkins/Desktop/ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
-              open /Applications/Xcode9.4.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
+              open /Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
              
              """
           }
