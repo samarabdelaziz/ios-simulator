@@ -7,7 +7,7 @@ pipeline {
               
              
               cd /Users/jenkins/Desktop/simulatortest
-              security unlock-keychain -p V0daf0ne_123
+              #security unlock-keychain -p V0daf0ne_123
               xcodebuild -project simulatortest.xcodeproj -scheme simulatortest -archivePath /Users/jenkins/Desktop/Samaripa archive
               
              """
@@ -32,7 +32,7 @@ pipeline {
             sh """
               
               #/Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3
-              #xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
+              xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
               #xcrun simctl install 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
               #xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
                xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212 /Users/jenkins/Library/Developer/Xcode/DerivedData/simulatortest-exbrzxdghrrzyfczpztjkfclkdre/Build/Products/Debug-iphonesimulator/simulatortest.app
