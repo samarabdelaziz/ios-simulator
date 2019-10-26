@@ -7,7 +7,7 @@ pipeline {
               
              
               cd /Users/jenkins/Desktop/simulatortest
-              #security unlock-keychain -p V0daf0ne_123
+             
               xcodebuild -project simulatortest.xcodeproj -scheme simulatortest -archivePath /Users/jenkins/Desktop/Samaripa archive
               
              """
