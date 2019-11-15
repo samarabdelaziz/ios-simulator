@@ -6,10 +6,11 @@ pipeline {
             sh """
               
              
-              cd /Users/jenkins/Desktop/simulatortest
+              #cd /Users/jenkins/Desktop/simulatortest
+               cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable/SearchBarInTable.xcodeproj
               security unlock-keychain -p V0daf0ne_123
-              xcodebuild -project simulatortest.xcodeproj -scheme simulatortest -archivePath /Users/jenkins/Desktop/Samaripa archive
-              
+              #xcodebuild -project simulatortest.xcodeproj -scheme simulatortest -archivePath /Users/jenkins/Desktop/Samaripa archive
+              xcodebuild -project SearchBarInTable.xcodeproj -scheme SearchBarInTable -archivePath /Users/jenkins/Desktop/IOS_Project_Arch archive
              """
           }
         }
@@ -20,8 +21,8 @@ pipeline {
               
               
 
-              xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/Samaripa.xcarchive -exportPath  /Users/jenkins/Desktop/ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
-              open /Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
+              #xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/Samaripa.xcarchive -exportPath  /Users/jenkins/Desktop/ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
+              #open /Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
              
              """
           }
@@ -35,7 +36,7 @@ pipeline {
               #xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
               #xcrun simctl install 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
               #xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
-               xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212 /Users/jenkins/Library/Developer/Xcode/DerivedData/simulatortest-exbrzxdghrrzyfczpztjkfclkdre/Build/Products/Debug-iphonesimulator/simulatortest.app
+               #xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212 /Users/jenkins/Library/Developer/Xcode/DerivedData/simulatortest-exbrzxdghrrzyfczpztjkfclkdre/Build/Products/Debug-iphonesimulator/simulatortest.app
             """
           }
      }
@@ -45,7 +46,7 @@ pipeline {
             steps{
             sh """
               
-              xcrun simctl launch C6382819-1EA6-4AF6-A3B7-F388A2A94212 test.simulatortest1
+              #xcrun simctl launch C6382819-1EA6-4AF6-A3B7-F388A2A94212 test.simulatortest1
            
              """
           }
