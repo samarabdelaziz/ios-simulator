@@ -7,7 +7,7 @@ pipeline {
               
              
               #cd /Users/jenkins/Desktop/simulatortest
-               cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable/SearchBarInTable.xcodeproj
+               cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
               security unlock-keychain -p V0daf0ne_123
               #xcodebuild -project simulatortest.xcodeproj -scheme simulatortest -archivePath /Users/jenkins/Desktop/Samaripa archive
               xcodebuild -project SearchBarInTable.xcodeproj -scheme SearchBarInTable -archivePath /Users/jenkins/Desktop/IOS_Project_Arch archive
