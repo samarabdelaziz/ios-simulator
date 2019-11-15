@@ -35,6 +35,7 @@ pipeline {
           stage('Publish to nexus') {
                steps{
                    sh "cd /Users/jenkins/Desktop"
+                   sh "ls -la"
                    sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
                    nexusArtifactUploader(
                         nexusVersion:'nexus3',protocol:'https',
