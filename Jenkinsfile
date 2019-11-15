@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage('build and archive') {
             steps{
-                withCredentials([usernamePassword(credentialsId: 'NexusPublisher', passwordVariable: 'nexus_PWD', usernameVariable: 'nexus_USER')]) {
+               
             sh """
               
              
@@ -18,6 +18,7 @@ pipeline {
 
         stage('Export IPA') {
             steps{
+                 withCredentials([usernamePassword(credentialsId: 'NexusPublisher', passwordVariable: 'nexus_PWD', usernameVariable: 'nexus_USER')]) {
             sh """
               
               
@@ -29,6 +30,7 @@ pipeline {
              
              """
           }
+        }
         }
 
         stage('Install app on simulator') {
@@ -60,5 +62,5 @@ pipeline {
          
 }
      }
-}
+
 
