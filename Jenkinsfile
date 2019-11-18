@@ -38,6 +38,7 @@ pipeline {
                    //sh "cd /Users/jenkins/Desktop/IOS_ipaoutput"
                    //sh "ls -la"
                    //sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
+                   sh "rm -rf IPA_IOS_ipaoutput.tar.gz"
                    nexusArtifactUploader(
                         nexusVersion:'nexus3',protocol:'https',
                         
