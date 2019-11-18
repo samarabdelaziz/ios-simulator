@@ -48,7 +48,7 @@ pipeline {
                         
                         nexusUrl:'nexus-vfre.skytap-tss.vodafone.com',
                         groupId:'vf.ios.ipa',
-                        version: '${env.BUILD_NUMBER}'
+                        version: ${env.BUILD_NUMBER}
                         repository: "IOS-simulator",
                         credentialsId:'NexusPublisher',
                         artifacts: [
