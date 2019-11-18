@@ -18,7 +18,7 @@ pipeline {
 
         stage('Export IPA') {
             steps{
-                 withCredentials([usernamePassword(credentialsId: 'NexusPublisher', passwordVariable: 'nexus_PWD', usernameVariable: 'nexus_USER')]) {
+                 //withCredentials([usernamePassword(credentialsId: 'NexusPublisher', passwordVariable: 'nexus_PWD', usernameVariable: 'nexus_USER')]) {
             sh """
               
               
@@ -32,16 +32,18 @@ pipeline {
              """
           }
         }
-        }
+        
           stage('Publish to nexus') {
                steps{
-                   sh "pwd"
+                   sh """
+                   pwd
                 
-                   //sh "ls -la /Users/jenkins/Desktop/IOS_ipaoutput"
-                  // sh "cd /Users/jenkins/Desktop/IOS_ipaoutput"
-                   // sh "pwd"
+                   ls -la /Users/jenkins/Desktop/IOS_ipaoutput"
+                   cd /Users/jenkins/Desktop/IOS_ipaoutput"
+                    pwd
                    //sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
                    //sh "rm -rf IPA_IOS_ipaoutput.tar.gz"
+                   """
                    nexusArtifactUploader(
                         nexusVersion:'nexus3',protocol:'https',
                         
@@ -49,7 +51,7 @@ pipeline {
                         groupId:'vf.ios.ipa',
                         version:'v.1',
                         repository: "IOS-simulator",
-                        credentialsId:'nexusPublisher',
+                        credentialsId:'NexusPublisher',
                         artifacts: [
                             [artifactId:"ios_ipa",
                             file:"Users/jenkins/Desktop/IOS_ipaoutput/SearchBarInTable.ipa",
