@@ -34,21 +34,21 @@ pipeline {
         }
           stage('Publish to nexus') {
                steps{
-                   sh "cd /Users/jenkins/Desktop"
-                   sh "ls -la"
-                   sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
+                   sh "cd /Users/jenkins/Desktop/IOS_ipaoutput"
+                   //sh "ls -la"
+                   //sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
                    nexusArtifactUploader(
                         nexusVersion:'nexus3',protocol:'https',
                         
-                        nexusUrl:'nexus-vfre.skytap-tss.vodafone.com' ,
+                        nexusUrl:'nexus-vfre.skytap-tss.vodafone.com',
                         groupId:'vf.ios.ipa',
                         version:'v.1',
-                        repository: 'IOS-simulator',
+                        repository: "IOS-simulator",
                         credentialsId:'nexusPublisher',
                         artifacts: [
-                            [artifactId:'ios_ipa',
-                            file:'IPA_IOS_ipaoutput.tar.gz',
-                            type:'tar.gz']
+                            [artifactId:"ios_ipa",
+                            file:"SearchBarInTable.ipa",
+                            type:'ipa']
                         ]
                 ) 
                    
