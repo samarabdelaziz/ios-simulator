@@ -38,8 +38,8 @@ pipeline {
                    sh """
                    pwd
                 
-                   ls -la /Users/jenkins/Desktop/IOS_ipaoutput"
-                   cd /Users/jenkins/Desktop/IOS_ipaoutput"
+                   ls -la /Users/jenkins/Desktop/IOS_ipaoutput
+                   cd /Users/jenkins/Desktop/IOS_ipaoutput
                     pwd
                    //sh "tar -zcvf IPA_IOS_ipaoutput.tar.gz IOS_ipaoutput/"
                    //sh "rm -rf IPA_IOS_ipaoutput.tar.gz"
