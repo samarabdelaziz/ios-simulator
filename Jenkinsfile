@@ -47,7 +47,7 @@ pipeline {
                         credentialsId:'nexusPublisher',
                         artifacts: [
                             [artifactId:"ios_ipa",
-                            file:"SearchBarInTable.ipa",
+                            file:"Users/jenkins/Desktop/IOS_ipaoutput/SearchBarInTable.ipa",
                             type:'ipa']
                         ]
                 ) 
