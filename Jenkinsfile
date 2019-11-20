@@ -1,6 +1,15 @@
 pipeline {
     agent {label 'ios'}
      stages {
+         stage('unit testing') {
+             steps{
+                sh """
+                cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
+                xcodebuild test -project simulatortest.xcodeproj -scheme simulatortest -destination 'platform=Simulator,name=iPhone,OS=13.1'
+                
+                """ 
+             }
+         }
         stage('build and archive') {
             steps{
                
