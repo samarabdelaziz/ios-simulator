@@ -26,7 +26,7 @@ pipeline {
               #xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/Samaripa.xcarchive -exportPath  /Users/jenkins/Desktop/ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
               #xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/IOS_Project_Arch.xcarchive -exportPath  /Users/jenkins/Desktop/IOS_ipaoutput -exportOptionsPlist /Users/jenkins/Library/Developer/Xcode/DerivedData/SearchBarInTable-auxpzfyrvkmkahfqxvcrklignzeu/Info.plist
               xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/IOS_Project_Arch.xcarchive -exportPath  /Users/jenkins/Desktop/IOS_ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
-              xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
+              #xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
               open /Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
               cd /Users/jenkins/Desktop/IOS_ipaoutput
              
@@ -82,7 +82,7 @@ pipeline {
             steps{
             sh """
               
-              #xcrun simctl launch C6382819-1EA6-4AF6-A3B7-F388A2A94212 test.simulatortest1
+              xcrun simctl launch C6382819-1EA6-4AF6-A3B7-F388A2A94212 SearchBarInTable1
            
              """
           }
