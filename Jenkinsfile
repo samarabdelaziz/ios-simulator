@@ -5,7 +5,7 @@ pipeline {
              steps{
                 sh """
                 cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
-                xcodebuild test -workspace SearchBarInTable.xcworkspace -scheme SearchBarInTable -sdk SearchBarInTable  
+                xcodebuild test -workspace SearchBarInTable.xcworkspace -scheme SearchBarInTable  
                 
                 """ 
              }
