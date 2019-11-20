@@ -5,7 +5,7 @@ pipeline {
              steps{
                 sh """
                 cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
-                xcodebuild test -workspace SearchBarInTable.xcworkspace \ -project SearchBarInTable.xcodeproj -scheme SearchBarInTable -destination 'platform:iOS Simulator, id:C6382819-1EA6-4AF6-A3B7-F388A2A94212, OS:13.1, name:iPhone 11 Pro Max'
+                xcodebuild test -workspace SearchBarInTable.xcworkspace\ -project SearchBarInTable.xcodeproj -scheme SearchBarInTable -destination 'platform:iOS Simulator, id:C6382819-1EA6-4AF6-A3B7-F388A2A94212, OS:13.1, name:iPhone 11 Pro Max'
                 
                 """ 
              }
