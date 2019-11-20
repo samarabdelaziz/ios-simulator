@@ -26,6 +26,7 @@ pipeline {
               #xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/Samaripa.xcarchive -exportPath  /Users/jenkins/Desktop/ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
               #xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/IOS_Project_Arch.xcarchive -exportPath  /Users/jenkins/Desktop/IOS_ipaoutput -exportOptionsPlist /Users/jenkins/Library/Developer/Xcode/DerivedData/SearchBarInTable-auxpzfyrvkmkahfqxvcrklignzeu/Info.plist
               xcodebuild -exportArchive -archivePath /Users/jenkins/Desktop/IOS_Project_Arch.xcarchive -exportPath  /Users/jenkins/Desktop/IOS_ipaoutput -exportOptionsPlist /Users/jenkins/Desktop/ipa.plist
+              xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
               open /Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator 
               cd /Users/jenkins/Desktop/IOS_ipaoutput
              
@@ -67,7 +68,7 @@ pipeline {
             sh """
               
               #/Applications/Xcode11.1.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3
-              #xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
+              xcrun simctl boot C6382819-1EA6-4AF6-A3B7-F388A2A94212
               #xcrun simctl install 7A75398A-DC41-4BEE-85EE-19EE9C2BFAE3  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
               #xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212  /Users/jenkins/Desktop/Samaripa.xcarchive/Products/Applications/simulatortest.app
                #xcrun simctl install C6382819-1EA6-4AF6-A3B7-F388A2A94212 /Users/jenkins/Library/Developer/Xcode/DerivedData/simulatortest-exbrzxdghrrzyfczpztjkfclkdre/Build/Products/Debug-iphonesimulator/simulatortest.app
