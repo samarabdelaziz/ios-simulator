@@ -5,7 +5,7 @@ pipeline {
              steps{
                 sh """
                 cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
-                xcodebuild test -project SearchBarInTable.xcodeproj -scheme SearchBarInTable  
+                xcodebuild  -scheme SearchBarInTable  -destination 'platform:Simulator,OS:13.1,name:iPhone' test
                 
                 """ 
              }
