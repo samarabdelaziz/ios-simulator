@@ -1,6 +1,8 @@
 pipeline {
     agent {label 'ios'}
      stages {
+         try {
+        notifyBuild('STARTED')
          stage('unit testing') {
              steps{
                 sh """
@@ -103,7 +105,7 @@ pipeline {
                
            }  
    }
-catch (e) {
+         }catch (e) {
         currentBuild.result = 'FAILURE'
         throw e
     } finally {
