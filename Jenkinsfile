@@ -1,10 +1,11 @@
 pipeline {
     agent {label 'ios'}
      stages {
-         try {
-        notifyBuild('STARTED')
+         
+        
          stage('unit testing') {
              steps{
+                slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                 sh """
                 cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
                 xcodebuild  -scheme SearchBarInTable  -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max' test
@@ -12,6 +13,16 @@ pipeline {
                 """ 
              }
          }
+            post {
+         success {
+               slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                 }
+         failure {
+               slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                }
+             }
+         
+         
         stage('build and archive') {
             steps{
                
@@ -99,18 +110,7 @@ pipeline {
           }
      }
          
-       stage('Deploy-Test') {
-           steps{
-        sh 'sleep 7'
-               
-           }  
-   }
-         }catch (e) {
-        currentBuild.result = 'FAILURE'
-        throw e
-    } finally {
-        notifySlack(currentBuild.result)
-    }
+       
    
 
 
