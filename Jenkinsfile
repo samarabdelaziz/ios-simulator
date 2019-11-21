@@ -97,6 +97,20 @@ pipeline {
           }
      }
          
+       stage('Deploy-Test') {
+        sh 'sleep 7'
+       
+   }
+} catch (e) {
+        currentBuild.result = 'FAILURE'
+        throw e
+    } finally {
+        notifySlack(currentBuild.result)
+    }
+   
+}
+
+         
          
          
 }
