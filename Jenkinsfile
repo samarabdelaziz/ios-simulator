@@ -98,8 +98,10 @@ pipeline {
      }
          
        stage('Deploy-Test') {
+           steps{
         sh 'sleep 7'
-       
+               
+           }  
    }
 } catch (e) {
         currentBuild.result = 'FAILURE'
@@ -108,7 +110,7 @@ pipeline {
         notifySlack(currentBuild.result)
     }
    
-}
+
 
          
          
