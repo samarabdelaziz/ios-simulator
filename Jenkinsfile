@@ -8,7 +8,7 @@ pipeline {
                 slackSend (color: '#FFFF00', message: "Unit Testing Started: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                 sh """
                 cd /Users/jenkins/Desktop/IOS-Project/SearchBarInTable
-                xcodebuild  -scheme SearchBarInTable  -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max' test
+                xcodebuild  -scheme SearchBarInTable  -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max' test > /Users/jenkins/Desktop/IOS_Project/ut_results.txt
                 
                 """ 
              }
