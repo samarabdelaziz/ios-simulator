@@ -19,7 +19,7 @@ pipeline {
                  }
          failure {
                slackSend (color: '#FF0000', message: "UT FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-                 sh 'xcodebuild  -scheme SearchBarInTable  -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max' test > /Users/jenkins/Desktop/iOS-Project/ut_results.txt'
+                 sh "xcodebuild  -scheme SearchBarInTable  -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max' test > /Users/jenkins/Desktop/iOS-Project/ut_results.txt"
                 }
              }
          }
